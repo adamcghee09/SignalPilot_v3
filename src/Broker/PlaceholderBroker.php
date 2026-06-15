@@ -1,0 +1,3 @@
+<?php
+namespace SignalPilot\Broker;use SignalPilot\Contracts\BrokerInterface;
+abstract class PlaceholderBroker implements BrokerInterface{protected string $brokerName='FutureBroker'; public function name():string{return $this->brokerName;} private function no(){throw new \RuntimeException($this->brokerName.' is a future integration placeholder.');} public function placeOrder(array $order):array{$this->no();} public function cancelOrder(string $orderId):bool{$this->no();} public function getOrder(string $orderId):?array{$this->no();} public function getPositions():array{$this->no();} public function closePosition(string $positionId,array $context=[]):array{$this->no();}}
